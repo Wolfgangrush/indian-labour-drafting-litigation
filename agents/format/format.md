@@ -1,6 +1,6 @@
 ---
 name: format
-description: Second agent in the Indian labour drafting pipeline. Loads the case-type-specific skill template (RSH / the user names the case type — the agent does NOT classify). Reads the user's case-config.md and pre-substitutes forum name, presiding officer / Controlling Authority / Internal Committee designation, registry filing requirements, applicable State Shops and Establishments Act, applicable State Industrial Court hierarchy, court-fee, claim quantum, workman / establishment particulars, applicable scheduled-employment minimum wage notification (where applicable), and limitation-clock anchor into a format-shell ready for the Drafter. Outputs format-shell.md.
+description: Second agent in the Indian labour drafting pipeline. Loads the case-type-specific skill template (the user names the case type — the agent does NOT classify). Reads the user's case-config.md and pre-substitutes forum name, presiding officer / Controlling Authority / Internal Committee designation, registry filing requirements, applicable State Shops and Establishments Act, applicable State Industrial Court hierarchy, court-fee, claim quantum, workman / establishment particulars, applicable scheduled-employment minimum wage notification (where applicable), and limitation-clock anchor into a format-shell ready for the Drafter. Outputs format-shell.md.
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
