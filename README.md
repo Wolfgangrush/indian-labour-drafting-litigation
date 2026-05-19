@@ -350,7 +350,7 @@ A plugin that codifies the procedural skeletons + the statutory-currency rules +
 
 Foreign legal-AI tools cannot fill this gap. The procedural conventions are jurisdiction-specific; the statutory framework is ID Act 1947 / IESO Act 1946 / PG Act 1972 / EPF Act 1952 / ESI Act 1948 / POSH Act 2013 / MW Act 1948 / four Labour Codes 2019-2020 which no foreign training data has indexed at depth; the formatting requirements at the Registry counter of a Labour Court / Industrial Tribunal / Controlling Authority / Internal Committee / EPFAT / EI Court are matters of bench practice that no foreign tool has encountered; and the State-specific Shops and Establishments / Labour Welfare Fund / Profession Tax overlay is variable across 28 States and 8 Union Territories.
 
-This plugin opens that door. It is most-deeply-validated for the practice idiom of the author at the Bombay High Court Nagpur Bench (and at Maharashtra labour fora), and shall be deepened with respect to other States as community contributors raise GitHub issues and Pull Requests with their State's specific overlay.
+This plugin opens that door.
 
 ---
 
