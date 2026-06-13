@@ -10,12 +10,12 @@
 >
 > This software generates assistive drafts and suggestions only. Every legal claim, citation, statute reference, procedural step, deadline calculation, and ground of relief must be independently verified by a qualified human practitioner before filing, advising a client, or relying on the output. The publisher accepts no liability for outputs used without verification.
 
-> 🛡️ **Privacy primitive — Reader agent invokes the gateway:** This drafting plugin's **Reader agent** (the first agent in the 6-agent pipeline) calls [pseudonymisation-gateway](https://github.com/Wolfgangrush/pseudonymisation-gateway) (MIT · Wolfgang Rush) on the user's case folder BEFORE any cloud-LLM call. Real client names · government IDs · case numbers · phone numbers · currency amounts are replaced with placeholders (`[PERSON_1]` · `[AADHAAR_1]` · `[CASE_NO_1]` · etc.) in a session-scoped in-memory token map that never touches disk. Downstream agents (Format · Drafter · Verifier · Refiner) work entirely on the sanitized text. The **Overseer agent** (the final agent) calls `desanitize()` to restore real values in the final pleading before it reaches the file system. Cloud LLM vendors never see your client's real PII.
+> 🛡️ **Privacy primitive — Reader agent invokes the gateway:** This drafting plugin's **Reader agent** (the first agent in the 6-agent pipeline) calls [pseudonymisation-gateway](https://github.com/Wolfgangrush/pseudonymisation-gateway) (MIT · wolfgang_rush) on the user's case folder BEFORE any cloud-LLM call. Real client names · government IDs · case numbers · phone numbers · currency amounts are replaced with placeholders (`[PERSON_1]` · `[AADHAAR_1]` · `[CASE_NO_1]` · etc.) in a session-scoped in-memory token map that never touches disk. Downstream agents (Format · Drafter · Verifier · Refiner) work entirely on the sanitized text. The **Overseer agent** (the final agent) calls `desanitize()` to restore real values in the final pleading before it reaches the file system. Cloud LLM vendors never see your client's real PII.
 
 
-## 🚀 Install — Wolfgang Rush marketplace
+## 🚀 Install — wolfgang_rush marketplace
 
-This plugin is part of the [Wolfgang Rush plugin family](https://github.com/Wolfgangrush/wolfgang-rush-marketplace) — 14 Indian-court drafting plugins distributed via one Claude Code marketplace.
+This plugin is part of the [wolfgang_rush plugin family](https://github.com/Wolfgangrush/wolfgang-rush-marketplace) — 14 Indian-court drafting plugins distributed via one Claude Code marketplace.
 
 **Via Claude Code (CLI) — recommended for the plugin family:**
 
@@ -184,7 +184,7 @@ In a Claude session, type:
 
 ## Your first pleading — step-by-step walkthrough
 
-Suppose you wish to draft a **Section 2A ID Act Application** before the Labour Court at Nagpur, for a workman dismissed without complying with Section 25F.
+Suppose you wish to draft a **Section 2A ID Act Application** before the Labour Court at [bench city], for a workman dismissed without complying with Section 25F.
 
 ### Step 1 — create a case folder
 
@@ -213,7 +213,7 @@ Suppose you wish to draft a **Section 2A ID Act Application** before the Labour 
 ### Step 2 — write `case-config.md`
 
 ```yaml
-forum: "Labour Court at Nagpur"
+forum: "Labour Court at [bench city]"
 state: "maharashtra"
 case_type: "id-act-section-2a-application"
 case_number_year: 2026
@@ -252,7 +252,7 @@ The pipeline runs:
 5. **Refiner** applies the verification flags, polishes the prose, re-substitutes real values, writes `draft-v2.docx`.
 6. **Overseer** reads `draft-v2.docx` with the Establishment's-counsel lens, writes `opposing-notes.md` and `final-draft.docx`.
 
-The advocate now reviews `final-draft.docx` against `opposing-notes.md`, makes professional adjustments, signs the verification, swears the affidavit, and files before the Labour Court at Nagpur.
+The advocate now reviews `final-draft.docx` against `opposing-notes.md`, makes professional adjustments, signs the verification, swears the affidavit, and files before the Labour Court at [bench city].
 
 ---
 
@@ -315,7 +315,7 @@ The Verifier enforces several disciplines mandatory in Indian labour practice �
 
 ## Privacy firewall — extra discipline for labour content + POSH Section 16
 
-Labour pleadings contain highly sensitive material — KYC data of workmen, EPF / ESI / UAN identifiers, salary figures, designations, dismissal-order references, charge-sheet references, domestic-inquiry findings. POSH content carries the additional statutory confidentiality discipline of Section 16 POSH Act 2013. The plugin's privacy discipline is the strictest among the Wolfgang Rush family:
+Labour pleadings contain highly sensitive material — KYC data of workmen, EPF / ESI / UAN identifiers, salary figures, designations, dismissal-order references, charge-sheet references, domestic-inquiry findings. POSH content carries the additional statutory confidentiality discipline of Section 16 POSH Act 2013. The plugin's privacy discipline is the strictest among the wolfgang_rush family:
 
 1. **Reader** substitutes every workman name, every establishment name, every EPF / ESI / UAN identifier, every salary figure, every designation, and every charge-sheet / domestic-inquiry / termination-order reference with structural placeholders before downstream processing. For POSH matters, the Reader additionally substitutes every complainant identifier, every respondent identifier, every witness name, and every Internal Committee member identifier — under stricter discipline aligned with Section 16 POSH Act 2013.
 2. The placeholder → real-value mapping is stored in the header of `case-facts.md` on the user's local machine **only**.
@@ -335,7 +335,7 @@ The MIT licence is the most permissive widely-recognised open-source licence. An
 
 ## Sibling plugins
 
-This plugin is one in the **Wolfgang Rush** family of Indian legal-drafting plugins. All thirteen siblings ship under the same six-agent pipeline (Reader → Format → Drafter → Verifier → Refiner → Overseer) and the family-of-plugins doctrine — each plugin narrowly scoped to one practice area / forum:
+This plugin is one in the **wolfgang_rush** family of Indian legal-drafting plugins. All thirteen siblings ship under the same six-agent pipeline (Reader → Format → Drafter → Verifier → Refiner → Overseer) and the family-of-plugins doctrine — each plugin narrowly scoped to one practice area / forum:
 
 | Plugin | GitHub repo | Scope |
 |---|---|---|
@@ -410,7 +410,7 @@ Issues raised with reproducible context are handled on a best-effort basis; this
 
 ## Author and brand
 
-The author is **Rushikesh R. Mahajan**, Advocate, practising before the Bombay High Court, Nagpur Bench. The plugin is published under the open-source brand **Wolfgang Rush**, which is the author's publishing handle for legal-technology infrastructure. Personal accountability under the Advocates Act 1961 attaches to the author regardless of the use of a publishing handle.
+The author is **Rushikesh R. Mahajan**, Advocate, practising before the High Courts of India. The plugin is published under the open-source brand **wolfgang_rush**, which is the author's publishing handle for legal-technology infrastructure. Personal accountability under the Advocates Act 1961 attaches to the author regardless of the use of a publishing handle.
 
 ---
 
