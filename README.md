@@ -1,3 +1,18 @@
+<div align="center">
+
+<img src="docs/banner.png" width="820"/>
+
+**Draft Indian labour, industrial-disputes, employment-rights, social-security, and workplace-protection pleadings — your seventh wolfgang_rush plugin.**
+
+Visit the live site: [wolfgangrush.github.io](https://wolfgangrush.github.io)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Claude Compatible](https://img.shields.io/badge/Claude-Compatible-8B5CF6)](https://claude.ai)
+[![Indian Law](https://img.shields.io/badge/Indian_Law-Plugin-FF6B35)](https://wolfgangrush.github.io)
+
+</div>
+
+
 # indian-labour-drafting
 
 > **Open-source Claude-compatible plugin for drafting Indian labour, industrial-disputes, employment-rights, social-security, and workplace-protection pleadings.**
